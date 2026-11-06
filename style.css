@@ -1,0 +1,170 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0fdf4;
+  color: #2d3748;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+  margin: 0;
+}
+
+h1 {
+  color: #2f855a;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+div {
+  background-color: #ffffff;
+  padding: 10px 18px;
+  margin: 8px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(56, 161, 105, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+}
+
+label {
+  font-weight: bold;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+input {
+  border: 2px solid #c6f6d5;
+  border-radius: 6px;
+  padding: 6px;
+  width: 90px;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #38a169;
+}
+
+button {
+  background-color: #38a169;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(56, 161, 105, 0.3);
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #2f855a;
+}
+
+#result {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #2d3748;
+}
+
+#state {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 📊 비만 진단 그래프 스타일 수정 */
+.bmi-graph-container {
+  display: none; /* 처음에 숨김 */
+  flex-direction: row; /* 가로로 나란히 정렬 */
+  flex-wrap: nowrap;    /* 줄바꿈 방지 */
+  justify-content: center;
+  align-items: center;  /* 수직 정렬 중앙으로 */
+  gap: 10px;            /* 카드 사이 간격 */
+  margin-top: 25px;
+  background: white;
+  padding: 25px 20px;   /* 위아래 여백을 넉넉하게 주어 배경 박스가 카드를 감싸도록 함 */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(56, 161, 105, 0.15);
+  width: fit-content;   /* 내용물 크기에 맞게 자동 조절 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;          /* 카드 너비 최적화 */
+  background-color: #ffffff;
+  padding: 8px 2px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75px; /* 너비를 좀 더 늘려 글자 깨짐 방지 */
+  padding: 10px 4px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.range-text {
+  font-size: 11px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+  text-align: center;
+  white-space: nowrap; /* 숫자가 두 줄로 쪼개지지 않도록 설정 */
+}
+
+.bar-bg {
+  width: 24px;
+  height: 140px;
+  background-color: #edf2f7;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.bar-fill {
+  width: 100%;
+  height: 0%;
+  border-radius: 15px;
+  transition: height 0.5s ease;
+}
+
+.bar-fill.blue { background-color: #3182ce; }
+.bar-fill.green { background-color: #38a169; }
+.bar-fill.purple { background-color: #805ad5; }
+.bar-fill.brown { background-color: #b7791f; }
+.bar-fill.orange { background-color: #dd6b20; }
+.bar-fill.red { background-color: #e53e3e; }
+
+.label-text {
+  font-size: 11px;
+  color: #718096;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.2;
+  word-break: keep-all; /* 글자 단어가 이상한 곳에서 끊기지 않도록 설정 */
+}
+
+/* 선택된 구간 하이라이트 카드시 스타일 */
+.bar-wrapper.active {
+  background-color: #f7fafc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+  transition: 0.2s;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <h1>BMI 계산기</h1>
+    <div> <label for="height">키(cm)</label>
+          <input type="text" id="height" placeholder="예: 170"> </div>
+    
+    <div> <label for="weight">몸무게(kg)</label>
+          <input type="text" id="weight" placeholder="예: 70"> </div>
+
+    <button onclick="calculateBMI()">계산하기</button>
+
+    <h2 id="result"></h2>
+    <h2 id="state"></h2>
+
+    <div class="bmi-graph-container">
+      <div class="bar-wrapper" id="bar-0">
+        <span class="range-text">18.5 이하</span>
+        <div class="bar-bg"><div class="bar-fill blue"></div></div>
+        <span class="label-text">저체중</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-1">
+        <span class="range-text">18.5~23</span>
+        <div class="bar-bg"><div class="bar-fill green"></div></div>
+        <span class="label-text">정상</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-2">
+        <span class="range-text">23~24.9</span>
+        <div class="bar-bg"><div class="bar-fill purple"></div></div>
+        <span class="label-text">비만 전 단계<br>(과체중)</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-3">
+        <span class="range-text">25~29.9</span>
+        <div class="bar-bg"><div class="bar-fill brown"></div></div>
+        <span class="label-text">1단계 비만</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-4">
+        <span class="range-text">30-34.9</span>
+        <div class="bar-bg"><div class="bar-fill orange"></div></div>
+        <span class="label-text">2단계 비만</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-5">
+        <span class="range-text">35이상</span>
+        <div class="bar-bg"><div class="bar-fill red"></div></div>
+        <span class="label-text">3단계 비만<br>(고도비만)</span>
+      </div>
+    </div>
+
+    <!-- 처음엔 숨겨져 있다가 계산하기 버튼을 누르면 나타납니다 -->
+    <div class="bmi-graph-container" id="graph-container">
+      <div class="bar-wrapper" id="bar-1">
+        <span class="range-text">18.5 이하</span>
+        <div class="bar-bg"><div class="bar-fill blue"></div></div>
+        <span class="label-text">저체중</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-2">
+        <span class="range-text">18.5~23</span>
+        <div class="bar-bg"><div class="bar-fill green"></div></div>
+        <span class="label-text">정상</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-3">
+        <span class="range-text">23~24.9</span>
+        <div class="bar-bg"><div class="bar-fill purple"></div></div>
+        <span class="label-text">비만 전 단계<br>(과체중)</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-4">
+        <span class="range-text">25~29.9</span>
+        <div class="bar-bg"><div class="bar-fill brown"></div></div>
+        <span class="label-text">1단계 비만</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-5">
+        <span class="range-text">30~34.9</span>
+        <div class="bar-bg"><div class="bar-fill orange"></div></div>
+        <span class="label-text">2단계 비만</span>
+      </div>
+
+      <div class="bar-wrapper" id="bar-6">
+        <span class="range-text">35 이상</span>
+        <div class="bar-bg"><div class="bar-fill red"></div></div>
+        <span class="label-text">3단계 비만<br>(고도비만)</span>
+      </div>
+    </div>
+    
+    <script src="./script.js"></script>
+  </body>
+</html>
